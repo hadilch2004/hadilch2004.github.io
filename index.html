@@ -1,0 +1,332 @@
+<title>Hadil Chafik</title>
+<meta name="description" content="Portfolio of Hadil Chafik — AI & Computer Engineering student, projects in RAG, web systems, and Linux monitoring.">
+<style>
+  :root{
+    --bg:#faf9f7;
+    --surface:#ffffff;
+    --ink:#1a1a1a;
+    --ink-soft:#54524d;
+    --line:#e6e2da;
+    --accent:#1f3a5f;
+    --accent-soft:#eef2f7;
+    --mono-bg:#f2f0eb;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#15161a;
+      --surface:#1c1e24;
+      --ink:#eceae4;
+      --ink-soft:#a7a49c;
+      --line:#2c2e35;
+      --accent:#8fb2e0;
+      --accent-soft:#22293a;
+      --mono-bg:#20222a;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#15161a;
+    --surface:#1c1e24;
+    --ink:#eceae4;
+    --ink-soft:#a7a49c;
+    --line:#2c2e35;
+    --accent:#8fb2e0;
+    --accent-soft:#22293a;
+    --mono-bg:#20222a;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Source Sans 3', system-ui, -apple-system, sans-serif;
+    padding-inline:20px;
+  }
+  a{color:var(--accent);}
+
+  .wrap{max-width:760px;margin:0 auto;padding-block:48px 64px;}
+
+  header.hero{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    padding-bottom:36px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:40px;
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+  h1{
+    font-family:'Fraunces', Georgia, serif;
+    font-size:clamp(34px,6vw,52px);
+    line-height:1.05;
+    margin:0;
+    text-wrap:balance;
+  }
+  .tagline{
+    font-size:18px;
+    color:var(--ink-soft);
+    max-width:56ch;
+    line-height:1.5;
+    margin:0;
+  }
+  .links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:6px;
+  }
+  .links a{
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    text-decoration:none;
+    border:1px solid var(--line);
+    padding:7px 12px;
+    border-radius:100px;
+    color:var(--ink);
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .links a:hover{border-color:var(--accent);color:var(--accent);}
+
+  section{margin-bottom:44px;}
+  .section-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:16px;
+  }
+
+  .about{
+    font-size:16px;
+    line-height:1.7;
+    color:var(--ink);
+    max-width:64ch;
+  }
+
+  .projects{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .project{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px 24px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .project-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .project h3{
+    margin:0;
+    font-family:'Fraunces', Georgia, serif;
+    font-size:20px;
+    font-weight:600;
+  }
+  .project .repo-link{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    white-space:nowrap;
+    text-decoration:none;
+  }
+  .project .repo-link::before{content:"↗ ";}
+  .stack{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+  .stack span{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11.5px;
+    background:var(--mono-bg);
+    color:var(--ink-soft);
+    padding:3px 9px;
+    border-radius:6px;
+  }
+  .project p{
+    margin:0;
+    font-size:14.5px;
+    line-height:1.6;
+    color:var(--ink-soft);
+  }
+
+  .research{
+    background:var(--accent-soft);
+    border-radius:14px;
+    padding:22px 24px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .research h3{
+    margin:0;
+    font-family:'Fraunces', Georgia, serif;
+    font-size:19px;
+    font-weight:600;
+  }
+  .research .status{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--accent);
+  }
+  .research p{
+    margin:0;
+    font-size:14.5px;
+    line-height:1.65;
+    color:var(--ink-soft);
+  }
+
+  .grid-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  @media (max-width:560px){
+    .grid-2{grid-template-columns:1fr;}
+  }
+  .block h4{
+    margin:0 0 8px;
+    font-size:14px;
+    font-weight:700;
+  }
+  .block ul{
+    margin:0;
+    padding-left:18px;
+    font-size:14px;
+    line-height:1.7;
+    color:var(--ink-soft);
+  }
+  .skill-row{
+    font-size:14px;
+    line-height:1.8;
+    color:var(--ink-soft);
+  }
+  .skill-row b{color:var(--ink);}
+
+  footer{
+    border-top:1px solid var(--line);
+    padding-top:24px;
+    font-size:13px;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">Portfolio</div>
+    <h1>Hadil Chafik</h1>
+    <p class="tagline">Final-year AI &amp; Computer Engineering student at Al Akhawayn University, building generative-AI applications, backend systems, and data pipelines. Looking for a PFE internship starting January 2027.</p>
+    <div class="links">
+      <a href="https://github.com/hadilch2004" target="_blank" rel="noopener">GitHub — @hadilch2004</a>
+      <a href="https://www.linkedin.com/in/hadil-chafik-779a86249/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:hadilch2004@gmail.com">hadilch2004@gmail.com</a>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-label">Projects</div>
+    <div class="projects">
+
+      <div class="project">
+        <div class="project-top">
+          <h3>RAG Document Intelligence System</h3>
+        </div>
+        <div class="stack">
+          <span>Python</span><span>FastAPI</span><span>LlamaIndex</span><span>Qdrant</span><span>OpenAI</span><span>Inngest</span><span>Docker</span>
+        </div>
+        <p>A Retrieval-Augmented Generation application for document-based question answering — PDF ingestion, chunking, embedding generation, vector retrieval in Qdrant, and LLM-based response generation, with backend workflows built on FastAPI and Inngest.</p>
+      </div>
+
+      <div class="project">
+        <div class="project-top">
+          <h3>EduLib — Digital Library System</h3>
+          <a class="repo-link" href="https://github.com/hadilch2004/EduLib-2024" target="_blank" rel="noopener">github.com/hadilch2004/EduLib-2024</a>
+        </div>
+        <div class="stack">
+          <span>Python</span><span>Flask</span><span>SQLite</span><span>JavaScript</span><span>React</span><span>GPT4All</span><span>LLaMA 3</span>
+        </div>
+        <p>Full-stack library platform built with Al Akhawayn University and Capgemini — authentication, catalog management, and borrowing tracking on a Flask/SQLite backend, with an AI chatbot powered by GPT4All and LLaMA 3. Presented at SSE Innovation Day.</p>
+      </div>
+
+      <div class="project">
+        <div class="project-top">
+          <h3>Linux Server Monitoring Dashboard</h3>
+          <a class="repo-link" href="https://github.com/hadilch2004/linux-monitor" target="_blank" rel="noopener">github.com/hadilch2004/linux-monitor</a>
+        </div>
+        <div class="stack">
+          <span>Python</span><span>psutil</span><span>PostgreSQL</span><span>SQLAlchemy</span><span>FastAPI</span><span>Streamlit</span>
+        </div>
+        <p>Monitoring system collecting CPU, memory, disk, and network metrics with psutil, persisted in PostgreSQL via SQLAlchemy, and exposed through a FastAPI REST API with a Streamlit dashboard for historical trends.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Research</div>
+    <div class="research">
+      <span class="status">Ongoing</span>
+      <h3>Quantum Big Data Analytics for High-Dimensional Classification</h3>
+      <p>Al Akhawayn University — investigating PCA and Quantum PCA for dimensionality reduction, and designing a controlled comparison between PCA + Variational Quantum Classifier and QPCA + VQC for high-dimensional classification.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Background</div>
+    <div class="grid-2">
+      <div class="block">
+        <h4>Education</h4>
+        <ul>
+          <li>B.S. Artificial Intelligence &amp; Robotization, Computer Engineering — Al Akhawayn University (2022–2026)</li>
+          <li>Exchange program, Bachelor of Information Science — University of Tsukuba, Japan (2025)</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h4>Experience</h4>
+        <ul>
+          <li>Peer Success Tutor, Computer Science — Al Akhawayn University (2024–2025)</li>
+          <li>Marketing Research Project, SURC — Al Akhawayn University (2024)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Skills</div>
+    <div class="skill-row"><b>Programming:</b> Python, Java, C, SQL, JavaScript</div>
+    <div class="skill-row"><b>AI &amp; Generative AI:</b> Machine Learning, RAG, LlamaIndex, OpenAI API, Qdrant, LLM APIs, NumPy, pandas</div>
+    <div class="skill-row"><b>Web &amp; Backend:</b> React, FastAPI, Flask, REST APIs, PostgreSQL, MongoDB, SQLite, SQLAlchemy</div>
+    <div class="skill-row"><b>Practices &amp; Tools:</b> Agile/Scrum, Git, GitHub, Docker, Jira, Linux</div>
+  </section>
+
+  <footer>
+    <span>Ifrane, Morocco</span>
+    <span>Open to PFE internships from January 2027</span>
+  </footer>
+
+</div>
